@@ -1,0 +1,3 @@
+displayName = My first mod
+author = rezoder and cain
+version = 0.1
