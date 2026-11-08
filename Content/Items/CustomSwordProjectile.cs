@@ -28,6 +28,7 @@ namespace newmod.Content.Items
             Projectile.extraUpdates = 1;
         }
 
+        // Use the new sprite
         public override string Texture => "newmod/Content/Items/CustomSword";
 
         public override void AI()
@@ -60,10 +61,12 @@ namespace newmod.Content.Items
             float angle;
             if (Projectile.ai[0] == 0)
             {
+                // Обычный взмах
                 angle = MathHelper.Lerp(-SwingRange / 2, SwingRange / 2, progress) * direction;
             }
             else
             {
+                // Вращение
                 angle = MathHelper.Lerp(0, SpinRange, progress) * direction;
             }
 
