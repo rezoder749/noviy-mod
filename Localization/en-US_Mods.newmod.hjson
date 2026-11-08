@@ -7,3 +7,5 @@ Items: {
 		Tooltip: Sosi sosi za 5 baksov sdelay
 	}
 }
+
+Projectiles.CustomSwordProjectile.DisplayName: Custom Sword Projectile

@@ -1,37 +1,59 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.DataStructures;
+using Microsoft.Xna.Framework;
+using newmod.Content.Items;
 
 namespace newmod.Content.Items
 {
-	// This is a basic item template.
-	// Please see tModLoader's ExampleMod for every other example:
-	// https://github.com/tModLoader/tModLoader/tree/stable/ExampleMod
-	public class TutorialSword : ModItem
-	{
-		// The Display Name and Tooltip of this item can be edited in the 'Localization/en-US_Mods.newmod.hjson' file.
-		public override void SetDefaults()
-		{
-			Item.damage = 100;
-			Item.DamageType = DamageClass.Melee;
-			Item.width = 100;
-			Item.height = 100;
-			Item.useTime = 20;
-			Item.useAnimation = 20;
-			Item.useStyle = ItemUseStyleID.Swing;
-			Item.knockBack = 6666;
-			Item.value = Item.buyPrice(silver: 1);
-			Item.rare = ItemRarityID.Blue;
-			Item.UseSound = SoundID.Item1;
-			Item.autoReuse = true;
-		}
+    public class CustomSword : ModItem
+    {
+        public int attackType = 0;
 
-		public override void AddRecipes()
-		{
-			Recipe recipe = CreateRecipe();
-			recipe.AddIngredient(ItemID.DirtBlock, 1);
-			recipe.AddTile(TileID.WorkBenches);
-			recipe.Register();
-		}
-	}
-}
+        public override void SetDefaults()
+        {
+            Item.width = 46;
+            Item.height = 48;
+
+            Item.damage = 65;
+            Item.DamageType = DamageClass.Melee;
+            Item.knockBack = 6f;
+            Item.crit = 6;
+
+            Item.useTime = 30;
+            Item.useAnimation = 30;
+            Item.useStyle = ItemUseStyleID.Shoot;
+            Item.noMelee = true;
+            Item.noUseGraphic = true;
+            Item.autoReuse = true;
+
+            Item.shoot = ModContent.ProjectileType<CustomSwordProjectile>();
+            Item.shootSpeed = 1f;
+
+            Item.value = Item.buyPrice(gold: 3);
+            Item.rare = ItemRarityID.Orange;
+            Item.UseSound = SoundID.Item1;
+        }
+
+        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, 
+            Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+        {
+            Projectile.NewProjectile(source, position, velocity, type, damage, knockback, 
+                player.whoAmI, attackType);
+
+            attackType = (attackType + 1) % 2;
+
+            return false;
+        }
+
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+                .AddIngredient(ItemID.HellstoneBar, 15)
+                .AddIngredient(ItemID.SoulofFright, 8)
+                .AddTile(TileID.MythrilAnvil)
+                .Register();
+        }
+    }
+}			

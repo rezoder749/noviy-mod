@@ -10,3 +10,4 @@ C:\Users\ozod2\OneDrive\Документы\My Games\Terraria\tModLoader\ModSourc
 C:\Users\ozod2\OneDrive\Документы\My Games\Terraria\tModLoader\ModSources\newmod\obj\Debug\net8.0\refint\newmod.dll
 C:\Users\ozod2\OneDrive\Документы\My Games\Terraria\tModLoader\ModSources\newmod\obj\Debug\net8.0\newmod.pdb
 C:\Users\ozod2\OneDrive\Документы\My Games\Terraria\tModLoader\ModSources\newmod\obj\Debug\net8.0\ref\newmod.dll
+C:\Users\ozod2\OneDrive\Документы\My Games\Terraria\tModLoader\ModSources\newmod\obj\Debug\net8.0\newmod.sourcelink.json
