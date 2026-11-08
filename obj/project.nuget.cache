@@ -1,8 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "rYoABFJKCYU=",
-  "success": true,
-  "projectFilePath": "C:\\Users\\ozod2\\OneDrive\\Документы\\My Games\\Terraria\\tModLoader\\ModSources\\newmod\\newmod.csproj",
+  "dgSpecHash": "iUx/f5ncpb4=",
+  "success": false,
+  "projectFilePath": "C:\\Users\\Максим\\OneDrive\\Desktop\\Новая папка (2)\\noviy-mod\\newmod.csproj",
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1105",
+      "level": "Error",
+      "message": "Unable to read project information for 'newmod': Invalid framework identifier ''.",
+      "projectPath": "C:\\Users\\Максим\\OneDrive\\Desktop\\Новая папка (2)\\noviy-mod\\newmod.csproj",
+      "filePath": "C:\\Users\\Максим\\OneDrive\\Desktop\\Новая папка (2)\\noviy-mod\\newmod.csproj",
+      "targetGraphs": []
+    }
+  ]
 }

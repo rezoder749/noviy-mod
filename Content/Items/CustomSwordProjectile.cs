@@ -28,7 +28,7 @@ namespace newmod.Content.Items
             Projectile.extraUpdates = 1;
         }
 
-        public override string Texture => "newmod/Content/Items/TutorialSword";
+        public override string Texture => "newmod/Content/Items/CustomSword";
 
         public override void AI()
         {
